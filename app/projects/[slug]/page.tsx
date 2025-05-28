@@ -3,16 +3,6 @@ import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
 import projects from "@/data/projects.json"
 
-interface Project {
-  title: string;
-  slug: string;
-  description: string;
-  tech: string[];
-  images: string[];
-  liveLink?: string;
-  githubLink?: string;
-}
-
 interface ProjectPageProps {
   params: { slug: string };
 }
