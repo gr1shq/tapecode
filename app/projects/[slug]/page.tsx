@@ -18,18 +18,15 @@ interface Project {
 const typedProjects: Project[] = projects;
 
 // Define props for the dynamic page
-interface ProjectPageProps {
-  params: { slug: string };
-}
-
 export async function generateStaticParams() {
   return typedProjects.map((project) => ({
     slug: project.slug,
   }));
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = typedProjects.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; // Unwrap the Promise
+  const project = typedProjects.find((p) => p.slug === slug);
 
   if (!project) {
     return <div>Project not found</div>;
