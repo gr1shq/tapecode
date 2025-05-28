@@ -1,20 +1,35 @@
 import Link from "next/link";
 import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
-import projects from "@/data/projects.json"
+import projects from "@/data/projects.json";
 
+// Define the Project interface
+interface Project {
+  title: string;
+  slug: string;
+  description: string;
+  tech: string[];
+  images: string[];
+  liveLink?: string;
+  githubLink?: string;
+}
+
+// Type the projects array
+const typedProjects: Project[] = projects;
+
+// Define props for the dynamic page
 interface ProjectPageProps {
   params: { slug: string };
 }
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({
+  return typedProjects.map((project) => ({
     slug: project.slug,
   }));
 }
 
 export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.slug === params.slug);
+  const project = typedProjects.find((p) => p.slug === params.slug);
 
   if (!project) {
     return <div>Project not found</div>;
