@@ -1,0 +1,71 @@
+[
+    {
+      "title": "Nike Shoe Shop",
+      "slug": "nike-shoe-shop",
+      "shortDescription": "A stylish homepage for a Nike shoe store, designed from Figma.",
+      "description": "A practice homepage for a Nike shoe shop, featuring a modern, responsive design with a focus on clean UI and product display. Converted from a Figma mockup to showcase front-end skills.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+      "heroImage": "/projects/nike/hero.png",
+      "images": ["/projects/nike/hero.png", "/projects/nike/home1.png", "/projects/nike/home2.png", "/projects/nike/home3.png", "/projects/nike/home4.png"]
+    },
+    {
+      "title": "Hiking Site",
+      "slug": "hiking-site",
+      "shortDescription": "A scenic homepage for a hiking brand with mountain visuals.",
+      "description": "A practice homepage inspired by mountain aesthetics, designed from a Figma mockup. Features a responsive layout and engaging visuals to promote hiking adventures.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+      "heroImage": "/projects/hiking/hero.png",
+      "images": ["/projects/hiking/hero.png", "/projects/hiking/home2.png", "/projects/hiking/home3.png"]
+    },
+    {
+      "title": "Home Consoles",
+      "slug": "home-consoles",
+      "shortDescription": "A gaming-themed homepage for home consoles.",
+      "description": "A practice homepage for a gaming console brand, built from a Figma design. Showcases a vibrant, responsive UI tailored for gaming enthusiasts.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+      "heroImage": "/projects/consoles/hero.png",
+      "images": ["/projects/consoles/hero.png", "/projects/consoles/home1.png", "/projects/consoles/home3.png"]
+    },
+    {
+      "title": "Designer Portfolio",
+      "slug": "designer-portfolio",
+      "shortDescription": "A sleek homepage for a designer’s portfolio.",
+      "description": "A practice homepage for a fictional designer’s portfolio, converted from Figma. Features a clean, modern design to highlight creative work.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+      "heroImage": "/projects/designer/hero.png",
+      "images": ["/projects/designer/hero.png", "/projects/designer/home1.png", "/projects/designer/home2.png" ]
+    },
+    {
+      "title": "Roomvibe",
+      "slug": "roomvibe",
+      "shortDescription": "A responsive e-commerce site for room decor.",
+      "description": "A fully responsive, SEO-friendly e-commerce platform for room decor, featuring affiliate links to Amazon, AliExpress, and Temu. Includes product pages, inspiration, and a blog.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+      "heroImage": "/projects/roomvibe/hero.png",
+      "images": ["/projects/roomvibe/hero.png", "/projects/roomvibe/home1.png", "/projects/roomvibe/home2.png", "/projects/roomvibe/home3.png"],
+      "liveLink": "https://roomvibe.vercel.app",
+      "githubLink": "https://github.com/yourprofile/roomvibe"
+    },
+    {
+      "title": "SimplifAI",
+      "slug": "simplifai",
+      "shortDescription": "A platform to find AI tools for specific needs.",
+      "description": "A fully responsive, SEO-friendly site helping users discover AI tools tailored to their problems. Features a clean UI and intuitive navigation, designed and built from scratch.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+      "heroImage": "/projects/simplifai/hero.png",
+      "images": ["/projects/simplifai/hero.png", "/projects/simplifai/home1.png"],
+      "liveLink": "https://simplifai-ai.vercel.app",
+      "githubLink": "https://github.com/yourprofile/simplifai"
+    },
+    {
+      "title": "Tapnglow",
+      "slug": "tapnglow",
+      "shortDescription": "An e-commerce site for lifestyle products.",
+      "description": "A fully responsive, SEO-friendly platform offering clothes, accessories, room decor, and more to enhance users’ lives. Designed and built with a focus on user experience and aesthetics.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+      "heroImage": "/projects/tapnglow/hero.png",
+      "images": ["/projects/tapnglow/hero.png", "/projects/tapnglow/home1.png"],
+      "liveLink": "https://tapnglow.vercel.app",
+      "githubLink": "https://github.com/yourprofile/tapnglow"
+    }
+  ]
