@@ -1,5 +1,7 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "Tapecode | Web Developer",
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Tapecode",
     images: [
       {
-        url: "/images/og-image.jpg", 
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Tapecode Portfolio",
@@ -45,11 +47,11 @@ export const metadata: Metadata = {
     title: "Tapecode | Web Developer",
     description:
       "Explore Tapecode’s web development projects and hire me for responsive, SEO-friendly websites. Contact: tapecode.studio@gmail.com",
-    images: ["/images/og-image.jpg"], 
+    images: ["/images/og-image.jpg"],
     creator: "@tapecodeEnt",
   },
   icons: {
-    icon: "/favicon.ico", 
+    icon: "/favicon.ico",
   },
 };
 
@@ -59,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Google Analytics */}
         <script
@@ -78,7 +80,14 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
