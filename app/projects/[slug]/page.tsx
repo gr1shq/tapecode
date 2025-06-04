@@ -5,6 +5,7 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
 import projects from "@/data/projects.json";
+import Image from "next/image";
 
 interface Project {
   title: string;
@@ -68,7 +69,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
             {project.images.map((image, i) => (
               <div key={i} className="relative group">
-                <img
+                <Image
                   src={image}
                   alt={`${project.title} screenshot ${i + 1}`}
                   className="w-full h-48 sm:h-64 object-cover rounded-md shadow-md transition-all duration-300 group-hover:brightness-75"

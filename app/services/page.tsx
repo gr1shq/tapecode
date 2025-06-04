@@ -1,4 +1,3 @@
-// pages/Services.tsx
 "use client";
 
 import React from "react";
@@ -35,7 +34,6 @@ const services: Service[] = [
   },
 ];
 
-// Map icons to services by index
 const serviceIcons = [
   <FaCode className="w-8 h-8 text-gray-800" />,
   <FaShoppingCart className="w-8 h-8 text-gray-800" />,

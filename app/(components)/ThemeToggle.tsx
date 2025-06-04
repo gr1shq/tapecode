@@ -1,4 +1,3 @@
-// components/ThemeToggle.tsx
 "use client";
 
 import { useTheme } from "next-themes";
@@ -11,7 +10,7 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true);
-    console.log("Current theme:", theme); // Debug log
+    console.log("Current theme:", theme); 
   }, [theme]);
 
   if (!mounted) return null;
