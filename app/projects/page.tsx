@@ -4,6 +4,7 @@ import Link from "next/link";
 import Header from "../(components)/Header";
 import Footer from "../(components)/Footer";
 import projects from "../../data/projects.json";
+import Image from "next/image";
 
 interface Project {
   title: string;
@@ -50,7 +51,7 @@ export default function Projects() {
                 aria-label={`View details for ${project.title}`}
               >
                 <div className="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-all duration-300 cursor-pointer">
-                  <img
+                  <Image
                     src={project.heroImage}
                     alt={`Screenshot of ${project.title} homepage`}
                     className="w-full h-36 sm:h-48 object-cover"

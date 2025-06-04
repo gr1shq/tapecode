@@ -35,10 +35,10 @@ const services: Service[] = [
 ];
 
 const serviceIcons = [
-  <FaCode className="w-8 h-8 text-gray-800" />,
-  <FaShoppingCart className="w-8 h-8 text-gray-800" />,
-  <FaRocket className="w-8 h-8 text-gray-800" />,
-  <FaPaintBrush className="w-8 h-8 text-gray-800" />,
+  <FaCode className="w-8 h-8 text-gray-800" key={1} />,
+  <FaShoppingCart className="w-8 h-8 text-gray-800" key={2} />,
+  <FaRocket className="w-8 h-8 text-gray-800"   key={3} />,
+  <FaPaintBrush className="w-8 h-8 text-gray-800" key={4} />,
 ];
 
 export default function Services() {
