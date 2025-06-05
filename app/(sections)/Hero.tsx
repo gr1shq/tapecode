@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -97,15 +97,6 @@ const Hero = () => {
         </div>
         {/* Social Links */}
         <div className="mt-6 sm:mt-8 flex justify-center gap-4 sm:gap-6">
-          <a
-            href="https://github.com/tapecode" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-800 dark:text-gray-600 hover:text-gray-900 dark:hover:text-gray-500 transition-colors duration-300"
-            aria-label="Visit my GitHub profile"
-          >
-            <FaGithub className="w-6 h-6 sm:w-7 h-7 md:w-8 h-8" />
-          </a>
           <a
             href="https://www.linkedin.com/in/grigory-polyakov-0a892935a/"
             target="_blank"
