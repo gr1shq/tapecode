@@ -114,7 +114,7 @@ export default function About() {
             </p>
             <div className="flex justify-center gap-4 sm:gap-6">
               <a
-                href="https://www.linkedin.com/in/grigory-polyakov-0a892935a/"
+                href="https://www.linkedin.com/in/grisha-p-0a892935a/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-800 hover:text-black transition-colors duration-300"

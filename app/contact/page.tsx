@@ -56,7 +56,7 @@ export default function Contact() {
             </p>
             <div className="flex justify-center gap-4 sm:gap-6">
               <Link
-                href="https://www.linkedin.com/in/grigory-polyakov-0a892935a/"
+                href="https://www.linkedin.com/in/grisha-p-0a892935a/"
                 aria-label="Visit my LinkedIn profile"
               >
                 <button className="bg-gray-800 text-white text-sm sm:text-base font-bold px-3 sm:px-4 py-1 sm:py-2 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:bg-black flex items-center gap-2">

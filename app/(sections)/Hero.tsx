@@ -98,7 +98,7 @@ const Hero = () => {
         {/* Social Links */}
         <div className="mt-6 sm:mt-8 flex justify-center gap-4 sm:gap-6">
           <a
-            href="https://www.linkedin.com/in/grigory-polyakov-0a892935a/"
+            href="https://www.linkedin.com/in/grisha-p-0a892935a/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-800 dark:text-gray-600 hover:text-gray-900 dark:hover:text-gray-500 transition-colors duration-300"
