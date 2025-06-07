@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Tapecode | Web Developer",
     description:
       "Explore Tapecode’s web development projects and hire me for responsive, SEO-friendly websites. Contact: tapecode.studio@gmail.com",
-    images: ["/images/og-image.jpg"],
+    images: ["/img/tapecode-logo.png"],
     creator: "@tapecodeEnt",
   },
   icons: {
