@@ -40,19 +40,20 @@ const Hero = () => {
         <p className="text-base sm:text-lg md:text-xl text-gray-800 dark:text-gray-600 mb-4 sm:mb-6 max-w-2xl mx-auto mt-2 transition-colors duration-300">
           I build fast, responsive, and user-friendly websites using Next.js, TypeScript, Tailwind CSS, and React.
         </p>
+        {/* Modified Buttons: Larger, with gradient and border */}
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           <Link href="/contact" aria-label="Contact me to hire">
-            <button className="bg-gray-800 dark:bg-gray-700 text-white text-base sm:text-lg md:text-xl font-bold px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:bg-black dark:hover:bg-gray-600">
+            <button className="bg-gray-800 dark:bg-gray-700 text-white text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r hover:from-gray-800 hover:to-gray-700 dark:hover:from-gray-700 dark:hover:to-gray-600 border border-gray-600 dark:border-gray-500">
               Hire Me
             </button>
           </Link>
           <Link href="/projects" aria-label="View my projects">
-            <button className="bg-gray-600 dark:bg-gray-400 text-white dark:text- text-base sm:text-lg md:text-xl font-bold px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:bg-gray-700 dark:hover:bg-gray-500">
+            <button className="bg-gray-600 dark:bg-gray-400 text-white text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r hover:from-gray-600 hover:to-gray-500 dark:hover:from-gray-400 dark:hover:to-gray-300 border border-gray-500 dark:border-gray-300">
               See My Work
             </button>
           </Link>
         </div>
-        {/* Skill Highlights */}
+        {/* Modified Skill Highlights: Simpler, flatter design */}
         <div className="mt-6 sm:mt-8 mb-6 sm:mb-8">
           <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-600 mb-2 sm:mb-4 transition-colors duration-300">
             My Core Skills
@@ -61,14 +62,14 @@ const Hero = () => {
             {["Next.js", "TypeScript", "Tailwind CSS", "React"].map((skill, index) => (
               <span
                 key={index}
-                className="bg-gray-600 dark:bg-gray-300 text-gray-800 dark:text-gray-700 font-semibold text-xs sm:text-sm px-2 py-1 sm:py-2 rounded-md shadow-sm transition-all duration-300 hover:bg-gray-500 dark:hover:bg-gray-200 w-20 sm:w-24"
+                className="bg-gray-600 dark:bg-gray-300 text-gray-800 dark:text-gray-700 font-medium text-xs sm:text-sm px-3 py-1 rounded-full transition-colors duration-300 w-20 sm:w-24"
               >
                 {skill}
               </span>
             ))}
           </div>
         </div>
-        {/* Carousel */}
+        {/* Carousel (Unchanged) */}
         <div className="mt-6 sm:mt-8 max-w-xs sm:max-w-md md:max-w-4xl mx-auto">
           <Swiper
             modules={[Autoplay, Pagination]}
@@ -95,7 +96,7 @@ const Hero = () => {
             ))}
           </Swiper>
         </div>
-        {/* Social Links */}
+        {/* Social Links (Unchanged) */}
         <div className="mt-6 sm:mt-8 flex justify-center gap-4 sm:gap-6">
           <a
             href="https://www.linkedin.com/in/grisha-p-0a892935a/"

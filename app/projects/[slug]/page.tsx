@@ -70,6 +70,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             {project.images.map((image, i) => (
               <div key={i} className="relative group">
                 <Image
+                  width={500}
+                  height={300}
                   src={image}
                   alt={`${project.title} screenshot ${i + 1}`}
                   className="w-full h-48 sm:h-64 object-cover rounded-md shadow-md transition-all duration-300 group-hover:brightness-75"
