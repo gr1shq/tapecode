@@ -51,6 +51,13 @@ const Hero = () => {
   return (
     <section className="home-bg min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="flex justify-center mb-4">
+          <img
+            src="/img/tapecode-logo.png"
+            alt="Tapecode logo"
+            className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gray-600 dark:border-gray-300"
+          />
+        </div>
         <HeroTitle
           strings={["Hi, I’m Tapecode, a Web Developer"]}
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-600 mb-4 sm:mb-6 transition-colors duration-300"
