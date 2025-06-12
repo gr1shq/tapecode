@@ -5,6 +5,7 @@ import { FaLinkedin } from "react-icons/fa";
 import Header from "../(components)/Header";
 import Footer from "../(components)/Footer";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const skills = [
   "HTML5",
@@ -26,12 +27,22 @@ const skills = [
 ];
 
 export default function About() {
+  const [skillsVisible, setSkillsVisible] = useState(false);
+  const [projectsVisible, setProjectsVisible] = useState(false);
+
+  useEffect(() => {
+    setSkillsVisible(true); // Trigger skills animation on load
+    const timer = setTimeout(() => {
+      setProjectsVisible(true); // Trigger projects animation after skills
+    }, skills.length * 100); // Delay based on number of skills (100ms each)
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div>
       <Header />
       <section className="about-bg min-h-screen flex items-center justify-center py-12 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Page Header */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             About Tapecode
           </h1>
@@ -42,8 +53,15 @@ export default function About() {
           {/* Bio Section */}
           <div className="mb-12 max-w-3xl mx-auto">
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gray-200 flex items-center justify-center text-gray-800 text-xl sm:text-2xl font-bold">
-                <Image src="/img/tapecode-logo.png" alt="Tapecode" width={150} height={150} className="rounded-full" />
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden animate-scale-in">
+                <Image
+                  src="/img/tapecode-logo.png"
+                  alt="Tapecode logo"
+                  width={96}
+                  height={96}
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
             <p className="text-gray-800 font-bold text-base sm:text-lg mb-4">
@@ -63,11 +81,14 @@ export default function About() {
               {skills.map((skill, index) => (
                 <span
                   key={index}
-                  className="bg-gray-200 text-black font-bold text-center py-3 px-4 rounded-lg shadow-md transition-all duration-300 w-24 text-sm hover:scale-105 group relative flex justify-center items-center"
+                  className={`bg-gray-200 text-black font-bold text-center py-3 px-4 rounded-lg shadow-md transition-all duration-300 w-24 text-sm hover:scale-105 group relative flex justify-center items-center ${
+                    skillsVisible ? "animate-spawn" : "opacity-0"
+                  }`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {skill}
                   <span className="absolute invisible group-hover:visible bg-gray-800 text-white text-xs rounded py-1 px-2 bottom-full mb-2 transition-opacity duration-200">
-                    {skill === "Next.js"  ? "Built 5+ production apps" : "Proficient"}
+                    {skill === "Next.js" ? "Built 5+ production apps" : "Proficient"}
                   </span>
                 </span>
               ))}
@@ -80,21 +101,30 @@ export default function About() {
               Key Projects
             </h2>
             <div className="relative border-l-2 border-gray-600 pl-6">
-              <div className="mb-6">
-                <span className="absolute -left-2 w-4 h-4 bg-gray-800 rounded-full"></span>
-                <p className="text-gray-800 font-bold text-base">Roomvibe</p>
-                <p className="text-gray-600 text-base">E-commerce platform built with Next.js and Tailwind CSS, delivering a seamless shopping experience.</p>
-              </div>
-              <div className="mb-6">
-                <span className="absolute -left-2 w-4 h-4 bg-gray-800 rounded-full"></span>
-                <p className="text-gray-800 font-bold text-base">Tapnglow</p>
-                <p className="text-gray-600 text-base">E-commerce site with React and Node.js, optimized for performance and SEO.</p>
-              </div>
-              <div className="mb-6">
-                <span className="absolute -left-2 w-4 h-4 bg-gray-800 rounded-full"></span>
-                <p className="text-gray-800 font-bold text-base">SimplifAI</p>
-                <p className="text-gray-600 text-base">Innovative tool using Next.js and Vercel for AI-driven solutions.</p>
-              </div>
+              {[
+                {
+                  name: "Roomvibe",
+                  desc: "E-commerce platform built with Next.js and Tailwind CSS, delivering a seamless shopping experience.",
+                },
+                {
+                  name: "Tapnglow",
+                  desc: "E-commerce site with React and Node.js, optimized for performance and SEO.",
+                },
+                {
+                  name: "SimplifAI",
+                  desc: "Innovative tool using Next.js and Vercel for AI-driven solutions.",
+                },
+              ].map((project, index) => (
+                <div
+                  key={index}
+                  className={`mb-6 ${projectsVisible ? "animate-slide-in-left" : "opacity-0"}`}
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <span className="absolute -left-2 w-4 h-4 bg-gray-800 rounded-full"></span>
+                  <p className="text-gray-800 font-bold text-base">{project.name}</p>
+                  <p className="text-gray-600 text-base">{project.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
 
