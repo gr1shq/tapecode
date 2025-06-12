@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import HeroTitle from "../(components)/HeroTitle";
 import ThemeToggle from "../(components)/ThemeToggle";
+import { useState, useEffect } from "react";
 
 const technologies = [
   "Next.js",
@@ -30,46 +31,87 @@ const technologies = [
 ];
 
 const Hero = () => {
+  const [skillsVisible, setSkillsVisible] = useState(false);
+  const [portfolioVisible, setPortfolioVisible] = useState(false);
+
+  const handleTypingComplete = () => {
+    setSkillsVisible(true); // Trigger Core Skills logos spawn
+  };
+
+  // Trigger portfolio animation after Core Skills logos finish spawning
+  useEffect(() => {
+    if (skillsVisible) {
+      const timer = setTimeout(() => {
+        setPortfolioVisible(true);
+      }, 800); // Delay matches Core Skills animation (4 logos * 0.2s = 0.8s)
+      return () => clearTimeout(timer);
+    }
+  }, [skillsVisible]);
+
   return (
     <section className="home-bg min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <HeroTitle
           strings={["Hi, I’m Tapecode, a Web Developer"]}
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-600 mb-4 sm:mb-6 transition-colors duration-300"
+          onTypingComplete={handleTypingComplete}
         />
-        <p className="text-base sm:text-lg md:text-xl text-gray-800 dark:text-gray-600 mb-4 sm:mb-6 max-w-2xl mx-auto mt-2 transition-colors duration-300">
+        <p className="text-base sm:text-md md:text-lg lg:text-xl text-gray-800 dark:text-gray-600 mb-4 sm:mb-6 max-w-2xl mx-auto mt-4 transition-colors duration-300">
           I build fast, responsive, and user-friendly websites using Next.js, TypeScript, Tailwind CSS, and React.
         </p>
-        {/* Modified Buttons: Larger, with gradient and border */}
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           <Link href="/contact" aria-label="Contact me to hire">
-            <button className="bg-gray-800 dark:bg-gray-700 text-white text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r hover:from-gray-800 hover:to-gray-700 dark:hover:from-gray-700 dark:hover:to-gray-600 border border-gray-600 dark:border-gray-500">
+            <button className="bg-gray-900 text-white text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover:bg-gray-700 shadow-md dark:bg-gray-800 dark:hover:bg-gray-600">
               Hire Me
             </button>
           </Link>
           <Link href="/projects" aria-label="View my projects">
-            <button className="bg-gray-600 dark:bg-gray-400 text-white text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r hover:from-gray-600 hover:to-gray-500 dark:hover:from-gray-400 dark:hover:to-gray-300 border border-gray-500 dark:border-gray-300">
+            <button className="bg-blue-900 text-white text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover:bg-blue-700 shadow-md dark:bg-blue-800 dark:hover:bg-blue-600">
               See My Work
             </button>
           </Link>
         </div>
-        {/* Modified Skill Highlights: Simpler, flatter design */}
-        <div className="mt-6 sm:mt-8 mb-6 sm:mb-8">
+        <div className="mt-12 sm:mt-16 mb-6 sm:mb-8">
           <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-600 mb-2 sm:mb-4 transition-colors duration-300">
             My Core Skills
           </h3>
-          <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4">
-            {["Next.js", "TypeScript", "Tailwind CSS", "React"].map((skill, index) => (
-              <span
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+            {[
+              { name: "Next.js", src: "/img/next-icon.png", alt: "Next.js logo" },
+              { name: "TypeScript", src: "/img/ts.png", alt: "TypeScript logo" },
+              { name: "Tailwind CSS", src: "/img/tailwind-icon.png", alt: "Tailwind CSS logo" },
+              { name: "React", src: "/img/react-icon.png", alt: "React logo" },
+            ].map((skill, index) => (
+              <img
                 key={index}
-                className="bg-gray-600 dark:bg-gray-300 text-gray-800 dark:text-gray-700 font-medium text-xs sm:text-sm px-3 py-1 rounded-full transition-colors duration-300 w-20 sm:w-24"
-              >
-                {skill}
-              </span>
+                src={skill.src}
+                alt={skill.alt}
+                className={`w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-full p-2 transition-transform duration-300 hover:scale-105 ${
+                  skillsVisible ? "animate-spawn" : "opacity-0"
+                }`}
+                style={{ animationDelay: `${index * 0.2}s` }}
+              />
             ))}
           </div>
         </div>
-        {/* Carousel (Unchanged) */}
+        {/* Portfolio Preview */}
+        <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {[
+            { src: "/projects/nike/hero.png", alt: "Nike portfolio mockup" },
+            { src: "/projects/hiking/hero.png", alt: "Hiking portfolio mockup" },
+            { src: "/projects/consoles/hero.png", alt: "Consoles portfolio mockup" },
+          ].map((project, index) => (
+            <img
+              key={index}
+              src={project.src}
+              alt={project.alt}
+              className={`w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ${
+                portfolioVisible ? "animate-scale-in" : "opacity-0"
+              }`}
+              style={{ animationDelay: `${index * 0.2}s` }}
+            />
+          ))}
+        </div>
         <div className="mt-6 sm:mt-8 max-w-xs sm:max-w-md md:max-w-4xl mx-auto">
           <Swiper
             modules={[Autoplay, Pagination]}
@@ -89,14 +131,13 @@ const Hero = () => {
           >
             {technologies.map((tech, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-gray-800 dark:bg-gray-200 text-gray-800 dark:text-gray-600 font-semibold text-xs sm:text-sm text-center py-2 sm:py-2.5 md:py-3 px-2 sm:px-3 md:px-4 rounded-md shadow-md hover:scale-105 hover:bg-gray-700 dark:hover:bg-gray-100 transition-all duration-300">
+                <div className="bg-gray-800 dark:bg-gray-200 text-gray-800 dark:text-gray-600 font-semibold text-xs sm:text-sm text-center py-2 sm:py-2.5 md:py-3 px-2 sm:px-3 md:px-4 rounded-md shadow-md hover:scale-105 transition-all duration-300">
                   {tech}
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-        {/* Social Links (Unchanged) */}
         <div className="mt-6 sm:mt-8 flex justify-center gap-4 sm:gap-6">
           <a
             href="https://www.linkedin.com/in/grisha-p-0a892935a/"
