@@ -143,7 +143,7 @@ export default function About() {
               </a>
             </p>
             <div className="flex justify-center gap-4 sm:gap-6">
-              <a
+              {/* <a
                 href="https://www.linkedin.com/in/grisha-p-0a892935a/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -151,7 +151,7 @@ export default function About() {
                 aria-label="LinkedIn Profile"
               >
                 <FaLinkedin className="w-8 h-8" />
-              </a>
+              </a> */}
               <a
                 href="https://x.com/tapecodeEnt"
                 target="_blank"

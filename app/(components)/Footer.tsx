@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li className="flex items-center justify-center sm:justify-start gap-2">
-                <a
+                {/* <a
                   href="https://www.linkedin.com/in/grisha-p-0a892935a//"
                   className="text-gray-300 dark:text-gray-200 hover:text-white transition-colors duration-300 text-sm sm:text-base"
                   aria-label="Visit LinkedIn profile"
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
                 <FaLinkedin className="w-4 h-4 text-gray-300" />
                   LinkedIn
                   </div>
-                </a>
+                </a> */}
               </li>
               <li className="flex items-center justify-center sm:justify-start gap-2">
                 <a

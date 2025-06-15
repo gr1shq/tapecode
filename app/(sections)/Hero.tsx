@@ -146,7 +146,7 @@ const Hero = () => {
           </Swiper>
         </div>
         <div className="mt-6 sm:mt-8 flex justify-center gap-4 sm:gap-6">
-          <a
+          {/* <a
             href="https://www.linkedin.com/in/grisha-p-0a892935a/"
             target="_blank"
             rel="noopener noreferrer"
@@ -154,7 +154,7 @@ const Hero = () => {
             aria-label="Visit my LinkedIn profile"
           >
             <FaLinkedin className="w-6 h-6 sm:w-7 h-7 md:w-8 h-8" />
-          </a>
+          </a> */}
           <a
             href="https://x.com/tapecodeEnt"
             target="_blank"

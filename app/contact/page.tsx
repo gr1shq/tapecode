@@ -55,7 +55,7 @@ export default function Contact() {
               </a>
             </p>
             <div className="flex justify-center gap-4 sm:gap-6">
-              <Link
+              {/* <Link
                 href="https://www.linkedin.com/in/grisha-p-0a892935a/"
                 aria-label="Visit my LinkedIn profile"
               >
@@ -63,7 +63,7 @@ export default function Contact() {
                   <FaLinkedin className="w-4 h-4" />
                   LinkedIn
                 </button>
-              </Link>
+              </Link> */}
               <Link href="https://x.com/tapecodeEnt" aria-label="Visit my X profile">
                 <button className="bg-gray-600 text-white text-sm sm:text-base font-bold px-3 sm:px-4 py-1 sm:py-2 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:bg-gray-700 flex items-center gap-2">
                   <FaXTwitter className="w-4 h-4" />
