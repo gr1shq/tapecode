@@ -1,108 +1,17 @@
 @import "tailwindcss";
 
-
-/* Root variables for light mode gradients */
-:root {
-  --home-gradient: linear-gradient(to right, #BAE6FD, #E9D5FF, #BAE6FD);
-  --about-gradient: linear-gradient(to bottom right, #F3F4F6, #CCFBF1, #F3F4F6);
-  --projects-gradient: linear-gradient(to top right, #DBEAFE, #EDE9FE, #DBEAFE);
-  --services-gradient: linear-gradient(to left, #D1FAE5, #DCFCE7, #D1FAE5);
-  --contact-gradient: linear-gradient(to top, #CFFAFE, #DBEAFE, #CFFAFE);
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Dark mode gradients */
-html.dark {
-  --home-gradient: linear-gradient(to right, #1E3A8A, #60346d, #6B21A8);
-  --about-gradient: linear-gradient(to bottom right, #1F2937, #0F766E, #111827);
-  --projects-gradient: linear-gradient(to top right, #312E81, #7C3AED, #312E81);
-  --services-gradient: linear-gradient(to left, #111827, #065F46, #111827);
-  --contact-gradient: linear-gradient(to top, #172554, #164E63, #172554);
+body {
+  background-color: #F5F5F5;
+  color: #333333;
 }
 
-/* Utility classes to apply gradients */
-.home-bg {
-  background: var(--home-gradient);
-  background-size: 200% 200%;
-}
-.about-bg {
-  background: var(--about-gradient);
-}
-.projects-bg {
-  background: var(--projects-gradient);
-}
-.services-bg {
-  background: var(--services-gradient);
-}
-.contact-bg {
-  background: var(--contact-gradient);
-}
-
-/* Smooth transition for theme changes */
-html {
-  transition: background 0.3s ease;
-}
-
-/* Custom CSS workaround for font colors and backgrounds */
-html.dark .text-gray-900 {
-  color: #ffffff !important;
-}
-html.dark .text-black {
-  color: #000000 !important;
-}
-html.dark .text-gray-800 {
-  color: rgb(169, 187, 223) !important;
-}
-html.dark .text-gray-600 {
-  color: #d1d5db !important;
-}
-html.dark .bg-white {
-  background-color: #111827 !important;
-}
-html.dark .bg-gray-800 {
-  background-color: #212934 !important;
-}
-html.dark .bg-gray-600 {
-  background-color: #374151 !important;
-}
-html.dark .bg-black-700 {
-  background-color: #b8c0ca !important;
-}
-
-@keyframes spawn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.animate-spawn {
-  animation: spawn 0.1s ease-out forwards;
-}
-
-@keyframes scaleIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-.animate-scale-in {
-  animation: scaleIn 0.5s ease-out forwards;
-}
-@keyframes slideInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-.animate-slide-in-left {
-  animation: slideInLeft 0.5s ease-out forwards;
+/* Ensure smooth transitions for hover effects */
+.group:hover .group-hover\:opacity-100 {
+  transition: opacity 0.3s ease-in-out;
 }

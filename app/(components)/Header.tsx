@@ -1,108 +1,67 @@
+// app/(components)/Header.tsx
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import ThemeToggle from "./ThemeToggle";
+import { useState } from "react";
 
-const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface HeaderProps {
+  scrollToSection: (ref: React.RefObject<HTMLElement | null>) => void;
+  aboutRef: React.RefObject<HTMLElement | null>;
+  servicesRef: React.RefObject<HTMLElement | null>;
+  projectsRef: React.RefObject<HTMLElement | null>;
+  contactRef: React.RefObject<HTMLElement | null>;
+}
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+export default function Header({ scrollToSection, aboutRef, servicesRef, projectsRef, contactRef }: HeaderProps) {
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <header className="bg-white dark:bg-gray-500 shadow-md sticky top-0 z-50 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        {/* Logo/Name */}
-        <Link href="/" className="text-2xl font-bold text-gray-800 dark:text-white transition-colors duration-300">
+    <header className="bg-[#F5F5F5] shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <Link href="/" className="text-2xl font-bold font-['Poppins'] text-[#0A6E6E]">
           Tapecode
         </Link>
-
-        {/* Desktop Navigation and Theme Toggle */}
-        <div className="flex items-center space-x-6">
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-6">
-            <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300">
-              About
-            </Link>
-            <Link href="/projects" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300">
-              Projects
-            </Link>
-            <Link href="/services" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300">
-              Services
-            </Link>
-            <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300">
-              Contact
-            </Link>
-          </nav>
-
-          {/* Theme Toggle (Desktop) */}
-          <div className="hidden md:block">
-            <ThemeToggle />
-          </div>
-        </div>
-
-        {/* Mobile Burger Menu Button */}
+        <nav className="hidden md:flex space-x-6">
+          <button onClick={() => scrollToSection(aboutRef)} className="hover:text-[#F4A261] font-['Inter']">
+            About
+          </button>
+          <button onClick={() => scrollToSection(servicesRef)} className="hover:text-[#F4A261] font-['Inter']">
+            Services
+          </button>
+          <button onClick={() => scrollToSection(projectsRef)} className="hover:text-[#F4A261] font-['Inter']">
+            Projects
+          </button>
+          <button onClick={() => scrollToSection(contactRef)} className="hover:text-[#F4A261] font-['Inter']">
+            Contact
+          </button>
+        </nav>
         <button
-          className="md:hidden text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 focus:outline-none"
-          onClick={toggleMenu}
+          className="md:hidden text-[#0A6E6E]"
+          onClick={() => setIsNavOpen(!isNavOpen)}
           aria-label="Toggle Menu"
         >
-          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          {isNavOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
-
-      {/* Mobile Navigation Menu */}
-      {isOpen && (
-        <nav className="md:hidden bg-white dark:bg-gray-500 shadow-md transition-colors duration-300">
+      {isNavOpen && (
+        <nav className="md:hidden bg-[#F5F5F5] shadow-md">
           <div className="flex flex-col items-center space-y-4 py-4">
-            <Link
-              href="/"
-              className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 text-lg"
-              onClick={toggleMenu}
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 text-lg"
-              onClick={toggleMenu}
-            >
+            <button onClick={() => scrollToSection(aboutRef)} className="hover:text-[#F4A261] font-['Inter'] text-lg">
               About
-            </Link>
-            <Link
-              href="/projects"
-              className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 text-lg"
-              onClick={toggleMenu}
-            >
-              Projects
-            </Link>
-            <Link
-              href="/services"
-              className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 text-lg"
-              onClick={toggleMenu}
-            >
+            </button>
+            <button onClick={() => scrollToSection(servicesRef)} className="hover:text-[#F4A261] font-['Inter'] text-lg">
               Services
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 text-lg"
-              onClick={toggleMenu}
-            >
+            </button>
+            <button onClick={() => scrollToSection(projectsRef)} className="hover:text-[#F4A261] font-['Inter'] text-lg">
+              Projects
+            </button>
+            <button onClick={() => scrollToSection(contactRef)} className="hover:text-[#F4A261] font-['Inter'] text-lg">
               Contact
-            </Link>
-            {/* Theme Toggle (Mobile) */}
-            <div className="pt-2">
-              <ThemeToggle />
-            </div>
+            </button>
           </div>
         </nav>
       )}
     </header>
   );
-};
-
-export default Header;
+}
