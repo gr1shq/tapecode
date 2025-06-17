@@ -7,7 +7,7 @@ import { FaCode, FaBagShopping, FaRocket, FaPaintbrush } from "react-icons/fa6";
 interface Service {
   title: string;
   description: string;
-  icon: any;
+  icon: React.ReactNode;
 }
 
 const services: Service[] = [
