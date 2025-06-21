@@ -43,8 +43,7 @@
       "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
       "heroImage": "/projects/roomvibe/hero.png",
       "images": ["/projects/roomvibe/hero.png", "/projects/roomvibe/home1.png", "/projects/roomvibe/home2.png", "/projects/roomvibe/home3.png"],
-      "liveLink": "https://roomvibe.vercel.app",
-      "githubLink": "https://github.com/yourprofile/roomvibe"
+      "liveLink": "https://roomvibe.vercel.app"
     },
     {
       "title": "SimplifAI",
@@ -54,8 +53,7 @@
       "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
       "heroImage": "/projects/simplifai/hero.png",
       "images": ["/projects/simplifai/hero.png", "/projects/simplifai/home1.png"],
-      "liveLink": "https://simplifai-ai.vercel.app",
-      "githubLink": "https://github.com/yourprofile/simplifai"
+      "liveLink": "https://simplifai-ai.vercel.app"
     },
     {
       "title": "Tapnglow",
@@ -65,7 +63,36 @@
       "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
       "heroImage": "/projects/tapnglow/hero.png",
       "images": ["/projects/tapnglow/hero.png", "/projects/tapnglow/home1.png"],
-      "liveLink": "https://tapnglow.vercel.app",
-      "githubLink": "https://github.com/yourprofile/tapnglow"
+      "liveLink": "https://tapnglow.vercel.app"
+    },
+    {
+      "title": "Photographer Portfolio",
+      "slug": "photographer-portfolio",
+      "shortDescription": "A responsive portfolio for a photographer.",
+      "description": "A practice portfolio for a photographer. Features a clean, modern design to showcase their work and contact information.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React", "Framer Motion"],
+      "heroImage": "/projects/photographer/photo1.png",
+      "images": ["/projects/photographer/photo1.png", "/projects/photographer/photo2.png", "/projects/photographer/photo3.png", "/projects/photographer/photo4.png"],
+      "liveLink": "https://portfolio-photography-day1.vercel.app" 
+    },
+    {
+      "title": "Musician Portfolio",
+      "slug": "musician-portfolio",
+      "shortDescription": "A responsive portfolio for a musician.",
+      "description": "A practice portfolio for a musician. Features a clean, modern design to showcase their work and contact information.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React", "Framer Motion"],
+      "heroImage": "/projects/music/music1.png",
+      "images": ["/projects/music/music1.png", "/projects/music/music2.png", "/projects/music/music3.png", "/projects/music/music4.png"],
+      "liveLink": "https://music-portfolio-day2.vercel.app"
+    },
+    {
+      "title": "Coffe Shop",
+      "slug": "coffee-shop",
+      "shortDescription": "A responsive homepage for a coffee shop.",
+      "description": "A practice homepage for a coffee shop. Features a clean, modern design to showcase their products and contact information.",
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "React", "Framer Motion"],
+      "heroImage": "/projects/coffee/coffee1.png",
+      "images": ["/projects/coffee/coffee1.png", "/projects/coffee/coffee2.png", "/projects/coffee/coffee3.png", "/projects/coffee/coffee4.png"],
+      "liveLink": "http://coffee-day3.vercel.app"
     }
   ]
