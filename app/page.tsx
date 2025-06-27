@@ -49,14 +49,14 @@ export default function Home() {
         projectsRef={projectsRef}
         contactRef={contactRef}
       />
+      <Projects sectionRef={projectsRef} setSelectedProject={setSelectedProject} />
+      <ProjectModal project={selectedProject} closeModal={() => setSelectedProject(null)} />
       <About sectionRef={aboutRef} />
       <Services
         sectionRef={servicesRef}
         scrollToContact={() => scrollToSection(contactRef)}
       />
       <Skills />
-      <Projects sectionRef={projectsRef} setSelectedProject={setSelectedProject} />
-      <ProjectModal project={selectedProject} closeModal={() => setSelectedProject(null)} />
       <Contact sectionRef={contactRef} />
       <Footer
         scrollToSection={scrollToSection}
