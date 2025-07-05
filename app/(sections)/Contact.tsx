@@ -11,6 +11,8 @@ interface ContactProps {
 
 export default function Contact({ sectionRef }: ContactProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const formspree = process.env.NEXT_PUBLIC_FORMSPREE
+
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,7 +33,6 @@ export default function Contact({ sectionRef }: ContactProps) {
     }
   };
 
-  const formspree = process.env.NEXT_PUBLIC_FORMSPREE
 
   return (
     <section id="contact" ref={sectionRef} className="py-16 px-4 bg-[#0A6E6E] text-white">
