@@ -31,6 +31,8 @@ export default function Contact({ sectionRef }: ContactProps) {
     }
   };
 
+  const formspree = process.env.NEXT_PUBLIC_FORMSPREE
+
   return (
     <section id="contact" ref={sectionRef} className="py-16 px-4 bg-[#0A6E6E] text-white">
       <motion.h2
@@ -51,7 +53,7 @@ export default function Contact({ sectionRef }: ContactProps) {
           Have a project in mind? Let’s build something amazing together! Reach out via the form or connect with me.
         </p>
         <form
-          action="https://formspree.io/f/mwpogwvk"
+          action={`https://formspree.io/f/${formspree}`}
           method="POST"
           onSubmit={handleFormSubmit}
           className="space-y-4"
