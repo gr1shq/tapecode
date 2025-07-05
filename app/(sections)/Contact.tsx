@@ -11,7 +11,6 @@ interface ContactProps {
 
 export default function Contact({ sectionRef }: ContactProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const formspree = process.env.NEXT_PUBLIC_FORMSPREE
 
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
