@@ -54,7 +54,7 @@ export default function Contact({ sectionRef }: ContactProps) {
           Have a project in mind? Let’s build something amazing together! Reach out via the form or connect with me.
         </p>
         <form
-          action={`https://formspree.io/f/${formspree}`}
+          action={`https://formspree.io/f/mwpogwvk`}
           method="POST"
           onSubmit={handleFormSubmit}
           className="space-y-4"
